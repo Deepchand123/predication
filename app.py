@@ -1,5 +1,6 @@
 # **1. Importing Necessary Libraries** 📚
 
+from winreg import REG_FULL_RESOURCE_DESCRIPTOR
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -9,8 +10,17 @@ import time
 import streamlit as st
 from db import *
 
-pickleFile=open("weights.pkl","rb")
-regressor=pickle.load(pickleFile) # our model
+from joblib import dump, load
+
+# Save the model
+dump(REG_FULL_RESOURCE_DESCRIPTOR, 'model.joblib')
+
+# Load the model
+regressor = load('model.joblib')
+
+
+# pickleFile=open("weights.pkl","rb")
+# regressor=pickle.load(pickleFile) # our model
 
 # **2. Loading Dataset**
 
@@ -478,11 +488,11 @@ def main():
   html3="""
 
     <div style="color:black; margin:80px; text-align:center;">
-      Developed with ❤️ by <a > Aniket Bhavar </a>
+      Developed with ❤️ by <a > Deepchand Prajapati </a>
     </div>
       """
 
   st.markdown(html3,unsafe_allow_html=True)
 
 if __name__=='__main__':
-    main()
+  main()
