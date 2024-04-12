@@ -1,6 +1,6 @@
 # **1. Importing Necessary Libraries** 📚
 
-from winreg import REG_FULL_RESOURCE_DESCRIPTOR
+# from winreg import REG_FULL_RESOURCE_DESCRIPTOR
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -13,7 +13,7 @@ from db import *
 from joblib import dump, load
 
 # Save the model
-dump(REG_FULL_RESOURCE_DESCRIPTOR, 'model.joblib')
+# dump(REG_FULL_RESOURCE_DESCRIPTOR, 'model.joblib')
 
 # Load the model
 regressor = load('model.joblib')
